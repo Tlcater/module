@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var title = document.getElementsByClassName("title")
+            var content = document.getElementsByClassName("content")
+            for (var j=0 ;j<content.length;j++){
+                content[j]=j;
+                console.log(content[j]);
+                for (var c=0 ;c<content.length;c++){
+                    content[c].style.display="none"
+                }
+            }
+            for (var i=0 ;i<title.length;i++){
+                title[i].addEventListener('click',function(){
+                    console.log(this.vlaue)
+                    console.log(this.nextSibling.nextSibling.style.display)
+                    if(this.nextSibling.nextSibling.style.display=="none"){
+                        this.nextSibling.nextSibling.style.display="block"
+                        console.log(this.nextSibling.nextSibling.style.display)
+                        console.log(0)
+                    }else if(this.nextSibling.nextSibling.style.display=="block"){
+                        this.nextSibling.nextSibling.style.display="none"
+                        console.log(1)
+                    }
+                })
+            }
+        }
+    </script>
+    <style>
+        .title{
+            height: auto;
+            border: 1px solid red;
+        }
+        .content{
+            height: auto;
+            border: 1px solid rgb(12, 126, 116);
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li  >
+            <p class="title">1</p>
+            <ul  class="content">
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+            </ul>
+        </li>
+        <li >
+            <p class="title">2</p>
+            <ul class="content">
+                <li>2</li>
+                <li>2</li>
+                <li>2</li>
+            </ul>
+        </li>
+        <li >
+            <p class="title">3</p>
+            <ul class="content">
+                <li>3</li>
+                <li>3</li>
+                <li>3</li>
+            </ul>
+        </li>
+        <li >
+            <p class="title">4</p>
+            <ul class="content">
+                <li>4</li>
+                <li>4</li>
+                <li>4</li>
+            </ul>
+        </li>
+        <li >
+            <p class="title">5</p>
+            <ul class="content">
+                <li>5</li>
+                <li>5</li>
+                <li>5</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
